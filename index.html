@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systemly — One AI Assistant. Multiple Business Solutions.</title>
+<meta name="description" content="Systemly is an AI assistant that answers IT, HR, billing, and sales questions from your own verified documentation — and hands off to a person the moment it isn't sure.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="Systemly logo">
+      <span>Systemly</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="locate.html">Locate Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://t.me/SystemlyPATR_bot" class="btn btn-ghost" target="_blank" rel="noopener">Message the bot</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy reveal in">
+      <p class="eyebrow">AI Assistant · IT · HR · Billing · Sales</p>
+      <h1>One AI Assistant.<br>Multiple Business Solutions.</h1>
+      <p class="lead">Systemly reads employee and customer questions, answers from your organisation's own verified documentation, and hands off to a person the moment it isn't confident — instead of guessing.</p>
+      <div class="hero-actions">
+        <a href="https://t.me/SystemlyPATR_bot" class="btn btn-amber" target="_blank" rel="noopener">
+          Message Systemly on Telegram
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost">See how it decides</a>
+      </div>
+      <div class="hero-note">
+        <span class="dot-live"></span>
+        Live on Telegram — routes to an answer or a person, every time
+      </div>
+    </div>
+
+    <div class="hero-visual reveal in" aria-hidden="true">
+      <svg viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible;">
+        <!-- connecting paths -->
+        <path id="pathAB" class="flow-path" pathLength="1" d="M92,190 L164,190" />
+        <path id="pathBC" class="flow-path" pathLength="1" d="M266,190 L300,190" />
+        <path id="pathCD" class="flow-path flow-path-delay1" pathLength="1" d="M368,178 C410,178 400,112 436,112" />
+        <path id="pathCE" class="flow-path flow-path-delay1" pathLength="1" d="M368,202 C410,202 400,268 436,268" />
+
+        <!-- traveling dots -->
+        <circle r="4.5" fill="#1B4B4F">
+          <animateMotion dur="3.6s" repeatCount="indefinite" begin="0.4s"
+            path="M92,190 L164,190 L266,190 L300,190 C342,190 400,178 400,178 C410,178 400,112 436,112" />
+        </circle>
+        <circle r="4.5" fill="#D98E3B">
+          <animateMotion dur="3.6s" repeatCount="indefinite" begin="2.2s"
+            path="M92,190 L164,190 L266,190 L300,190 C342,190 400,202 400,202 C410,202 400,268 436,268" />
+        </circle>
+
+        <!-- Node A: Question -->
+        <g transform="translate(30,166)">
+          <rect width="62" height="48" rx="10" fill="#FFFFFF" stroke="#DCE3E5" />
+          <path d="M31,15 a9,9 0 1 1 -8.7,11 L18,30 l3.3,-4.6 A9,9 0 0 1 31,15z" fill="none" stroke="#1B4B4F" stroke-width="1.5" transform="scale(0.8) translate(6,4)"/>
+          <text x="31" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#55636D">QUESTION</text>
+        </g>
+
+        <!-- Node B: Classify -->
+        <g transform="translate(164,158)">
+          <rect width="102" height="64" rx="12" fill="#FFFFFF" stroke="#DCE3E5"/>
+          <text x="51" y="28" text-anchor="middle" font-family="IBM Plex Mono" font-weight="600" font-size="10.5" fill="#16202A">CLASSIFY</text>
+          <text x="51" y="45" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#55636D">IT · HR · BILL · SALES</text>
+        </g>
+
+        <!-- Node C: Decide (diamond) -->
+        <g transform="translate(300,190)">
+          <rect x="-38" y="-38" width="76" height="76" rx="14" fill="#1B4B4F" transform="rotate(45)"/>
+          <text x="0" y="-4" text-anchor="middle" font-family="IBM Plex Mono" font-weight="600" font-size="10" fill="#fff">DECIDE</text>
+          <text x="0" y="10" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="#B9D4D1">confident?</text>
+        </g>
+
+        <!-- Node D: Verified answer -->
+        <g transform="translate(436,84)">
+          <rect width="56" height="56" rx="12" fill="#1B4B4F"/>
+          <path d="M15,29 L24,38 L41,18" fill="none" stroke="#7CC9A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="28" y="70" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" fill="#55636D">ANSWERED</text>
+        </g>
+
+        <!-- Node E: Escalate -->
+        <g transform="translate(436,240)">
+          <rect width="56" height="56" rx="12" fill="#D98E3B"/>
+          <circle cx="28" cy="21" r="7" fill="none" stroke="#0F3336" stroke-width="2.2"/>
+          <path d="M14,42 c0,-10 28,-10 28,0" fill="none" stroke="#0F3336" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="28" y="70" text-anchor="middle" font-family="IBM Plex Mono" font-size="8.5" fill="#55636D">ESCALATED</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The problem</p>
+      <h2>Routine questions are eating real hours</h2>
+      <p>Most small-to-mid-sized businesses run employee and customer support out of scattered emails, spreadsheets, and shared inboxes. That works, until the volume doesn't.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M2 16.5A2.5 2.5 0 0 1 4.5 14H6a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4.5A2.5 2.5 0 0 1 2 17.5v-1z"/><path d="M22 16.5a2.5 2.5 0 0 0-2.5-2.5H18a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1.5a2.5 2.5 0 0 0 2.5-2.5v-1z"/></svg>
+        </div>
+        <h3>Slow responses</h3>
+        <p>Customers wait on fragmented channels for answers that already exist somewhere in your internal docs.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 19c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5"/><circle cx="17.5" cy="8.7" r="2.4"/><path d="M15.5 13.7c2.7.3 5 2.2 5 5.3"/></svg>
+        </div>
+        <h3>Repetitive load</h3>
+        <p>Employees answer the same IT, HR, and billing questions daily — instead of doing higher-value work.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Inconsistent answers</h3>
+        <p>Different staff give different answers. Over time, that erodes trust and slows growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how-it-works" style="background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2>Five steps, every time</h2>
+      <p>Retrieval and escalation logic run as plain, auditable steps — not a black box — so each part can be tested on its own.</p>
+    </div>
+    <div class="timeline">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Ask</h3>
+        <p>A question arrives by chat, from an employee or a customer.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Retrieve</h3>
+        <p>Systemly pulls the matching rows from the verified knowledge base.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Classify</h3>
+        <p>The question is sorted into IT, HR, Billing, or Sales.</p>
+      </div>
+      <div class="step reveal active">
+        <div class="step-num">04</div>
+        <h3>Decide</h3>
+        <p>Confident → answer immediately. Unsure → escalate to a person.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <h3>Log</h3>
+        <p>Every decision is recorded, so the team can see what got answered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPARTMENTS ============ -->
+<section id="departments">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Coverage</p>
+      <h2>One assistant, four departments</h2>
+      <p>The same routing logic, pointed at whichever documentation a business gives it.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card reveal">
+        <span class="tag">01</span>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3>IT Support</h3>
+        <p>VPN resets, device onboarding.</p>
+      </div>
+      <div class="dept-card reveal">
+        <span class="tag">02</span>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg>
+        </div>
+        <h3>HR</h3>
+        <p>Leave requests, onboarding checklists.</p>
+      </div>
+      <div class="dept-card reveal">
+        <span class="tag">03</span>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 15h6"/></svg>
+        </div>
+        <h3>Billing</h3>
+        <p>Invoice disputes, payment plans.</p>
+      </div>
+      <div class="dept-card reveal">
+        <span class="tag">04</span>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+        <h3>Sales</h3>
+        <p>Plan comparisons, trial questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESCALATION DEMO ============ -->
+<section id="safety" style="background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <div class="console">
+          <div class="console-inner">
+            <div class="console-bar"><span></span><span></span><span></span></div>
+            <div class="console-line"><span class="k">$</span><span class="v">systemly --trace last</span></div>
+            <div class="console-divider"></div>
+            <div class="console-line"><span class="k">question</span><span class="v">"Can I get a refund exception?"</span></div>
+            <div class="console-line"><span class="k">category</span><span class="v">BILLING</span></div>
+            <div class="console-line"><span class="k">confidence</span><span class="v amber">32%</span></div>
+            <div class="console-line"><span class="k">retrieved</span><span class="v">BIL-01, BIL-02 (no exception clause)</span></div>
+            <div class="console-divider"></div>
+            <div class="console-line"><span class="k">decision</span><span class="v amber">→ ESCALATE to human agent</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Safety</p>
+        <h2>It hands off instead of guessing</h2>
+        <p>When a question is in scope but the knowledge base doesn't cover it — a refund exception, a complaint, anything needing judgement — Systemly says so plainly, and routes it to a person.</p>
+        <ul class="split-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Builds trust — no invented policy details.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Protects the business from confidently wrong answers.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Keeps a person in the loop for judgement calls.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section>
+  <div class="container">
+    <div class="cta-band reveal">
+      <p class="eyebrow" style="justify-content:center; color:var(--amber);">Get started</p>
+      <h2>Fewer repeated questions.<br>Faster, more consistent answers.</h2>
+      <p>Try Systemly on Telegram, or reach the team directly.</p>
+      <div class="cta-actions">
+        <a href="https://t.me/SystemlyPATR_bot" class="btn btn-amber" target="_blank" rel="noopener">Message the bot</a>
+        <a href="contact.html" class="btn btn-ghost-light">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Systemly logo">
+          <span>Systemly</span>
+        </div>
+        <p style="max-width:32ch; font-size:0.9rem;">An AI assistant that routes business questions to a verified answer — or the right person.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="locate.html">Locate Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="mailto:support@systemly.com">support@systemly.com</a></li>
+          <li><a href="tel:+6591234567">+65 9123 4567</a></li>
+          <li><a href="https://t.me/SystemlyPATR_bot" target="_blank" rel="noopener">t.me/SystemlyPATR_bot</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Systemly. All rights reserved.</span>
+      <span class="credit">Built by Team Princess and the rest · C240 AI in Action, Republic Polytechnic</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
